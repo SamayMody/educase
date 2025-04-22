@@ -8,6 +8,7 @@ export const connection = () => {
         user: process.env.MYSQL_USER,
         password: process.env.MYSQL_PASSWORD,
         database: process.env.MYSQL_DATABASE,
+        port: 6872,
     }).promise()
     return pool;
 
