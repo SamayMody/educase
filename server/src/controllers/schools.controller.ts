@@ -4,7 +4,7 @@ export const registerSchool = async (req, res) => {
     try {
         const { name, address, latitude, longitude } = req.body;
         const connect = await connection().getConnection();
-        const data = await connect.query('INSERT INTO schools (id, name, address, latitude, longitude) VALUES (UUID(), ?, ?, ?, ?)',
+        const data = await connect.query('INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)',
             [name, address, latitude, longitude]);
 
         return res.status(201).json({ "message": "School registered!" });
